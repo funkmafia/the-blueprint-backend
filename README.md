@@ -1,4 +1,4 @@
-# The Blueprint – Backend API
+# The Blueprint – Backend
 
 This is the backend service for **The Blueprint** portfolio site. It handles contact form submissions by:
 
