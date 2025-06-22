@@ -5,7 +5,7 @@ import {
   getAllMessages,
   getMessageById,
   deleteMessageById,
-} from "../controllers/contactController";
+} from "../controllers/contactController.js";
 
 const router = express.Router();
 
@@ -13,3 +13,5 @@ router.post("/", handleNewMessage);
 router.get("/", getAllMessages);
 router.get("/:id", getMessageById);
 router.delete("/:id", deleteMessageById);
+
+export default router;

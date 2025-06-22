@@ -16,7 +16,7 @@ export const handleNewMessage = async (req, res) => {
     const newMessage = await ContactMessage.create({ name, email, message });
     res
       .status(201)
-      .json({ message: "Message send successfully!", data: newMessage });
+      .json({ message: "Message sent successfully!", data: newMessage });
   } catch (err) {
     res.status(500).json({ message: err.message });
   }

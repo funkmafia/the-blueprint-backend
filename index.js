@@ -3,11 +3,11 @@ import express from "express"; // thebackend framework
 import mongoose from "mongoose"; // connects to mongoDB
 import dotenv from "dotenv"; // loads the env var from .env file
 dotenv.config();
-import contactRoutes from "./routes/contact"; // importing the file that handles the route
-import connectToDB from "./config/db";
+import contactRoutes from "./routes/contact.js"; // importing the file that handles the route
+import connectToDB from "./config/db.js";
 
 const app = express(); // sets up the express ap
-const PORT = process.env.PORT || 3001; // gets the port number from .env or defaults to 3001
+const PORT = process.env.PORT || 3001;
 
 connectToDB();
 
