@@ -4,9 +4,12 @@ import mongoose from "mongoose"; // connects to mongoDB
 import dotenv from "dotenv"; // loads the env var from .env file
 dotenv.config();
 import contactRoutes from "./routes/contact"; // importing the file that handles the route
+import connectToDB from "./config/db";
 
 const app = express(); // sets up the express ap
 const PORT = process.env.PORT || 3001; // gets the port number from .env or defaults to 3001
+
+connectToDB();
 
 app.use(
   cors({
@@ -17,11 +20,6 @@ app.use(
 );
 
 app.use(express.json()); // middleware tells express to automatically parse JSON from incoming requests, i.e contact form data
-
-mongoose
-  .connect(process.env.MONGODB_URL)
-  .then(() => console.log("Connected to MongoDB"))
-  .catch(() => console.log("MonoDB connection error", err));
 
 app.use("/contact", contactRoutes); // registers all the routes in folder
 

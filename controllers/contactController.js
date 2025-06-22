@@ -11,9 +11,12 @@ export const getAllMessages = async (req, res) => {
 
 export const handleNewMessage = async (req, res) => {
   const { name, email, message } = req.body;
+
   try {
     const newMessage = await ContactMessage.create({ name, email, message });
-    res.status(201).json(newMessage);
+    res
+      .status(201)
+      .json({ message: "Message send successfully!", data: newMessage });
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
