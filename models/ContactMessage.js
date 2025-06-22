@@ -31,7 +31,7 @@ const messageSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const contactMessage =
-  mongoose.models.contactMessage ||
-  mongoose.model("contactMessage", messageSchema);
-export default contactMessage;
+const ContactMessage =
+  mongoose.models.ContactMessage ||
+  mongoose.model("ContactMessage", messageSchema);
+export default ContactMessage;
