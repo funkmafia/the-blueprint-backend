@@ -13,7 +13,7 @@ connectToDB();
 
 app.use(
   cors({
-    origin: ["http://localhost:3000"],
+    origin: ["https:www.zakblueprint.com"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
