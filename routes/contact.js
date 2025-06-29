@@ -1,7 +1,7 @@
 // this page is the reception desk !!
 import express from "express";
 import {
-  ContactMessage,
+  handleNewMessage,
   getAllMessages,
   getMessageById,
   deleteMessageById,
@@ -11,7 +11,7 @@ const router = express.Router();
 
 router.post("/", async (req, res) => {
   try {
-    const newMessage = new ContactMessage(req.body);
+    const newMessage = new handleNewMessage(req.body);
     await newMessage.save();
     res.status(201).json({ message: "Message received!" });
   } catch (error) {
