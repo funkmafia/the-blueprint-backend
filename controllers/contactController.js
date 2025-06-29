@@ -9,7 +9,7 @@ export const getAllMessages = async (req, res) => {
   }
 };
 
-export const handleNewMessageNewMessage = async (req, res) => {
+export const handleNewMessage = async (req, res) => {
   const { name, email, message } = req.body;
 
   try {
