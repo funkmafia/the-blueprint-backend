@@ -9,16 +9,20 @@ export const getAllMessages = async (req, res) => {
   }
 };
 
-export const handleNewMessage = async (req, res) => {
+export const NewMessage = async (req, res) => {
   const { name, email, message } = req.body;
 
   try {
-    const newMessage = await ContactMessage.create({ name, email, message });
+    const newMessage = new ContactMessage({ name, email, message });
+    await newMessage.save();
     res
       .status(201)
       .json({ message: "Message sent successfully!", data: newMessage });
   } catch (err) {
-    res.status(500).json({ message: err.message });
+    console.error("Error saving contact message:", err);
+    res
+      .status(500)
+      .json({ message: "Failed to send message. Please try again later." });
   }
 };
 
