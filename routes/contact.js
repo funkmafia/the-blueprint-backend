@@ -1,12 +1,11 @@
 // this page is the reception desk !!
 import express from "express";
 import {
-  newMessage,
+  ContactMessage,
   getAllMessages,
   getMessageById,
   deleteMessageById,
 } from "../controllers/contactController.js";
-import ContactMessage from "../models/Contact.js";
 
 const router = express.Router();
 
